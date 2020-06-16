@@ -8,8 +8,8 @@ from gsom import label_neurons
 from gsom import check_gsom_accuracy
 from gsom import generate_confusion_matrix
 
-data_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-data.csv"
-labels_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-labels.csv"
+data_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-50k-data.csv"
+labels_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-50k-labels.csv"
 
 # load the input data
 input = []
@@ -34,9 +34,9 @@ with open(labels_file) as csv_file:
 
 ######################
 
-init_gsom (input, 2, 2, 1.0)
+init_gsom (input, sf=1.0)
 
-start_growing_phase (input, 10)
+start_growing_phase (input, 1)
 
 start_smoothing_phase (input, 5)
 
