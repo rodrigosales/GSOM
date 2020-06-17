@@ -1,5 +1,5 @@
 import csv
-from gsom import init_gsom
+from gsom import init_grid
 from gsom import start_growing_phase
 from gsom import start_smoothing_phase
 from gsom import print_classification
@@ -34,7 +34,7 @@ with open(labels_file) as csv_file:
 
 ######################
 
-init_gsom (input, sf=1.0, alfa=1.0)
+init_grid (input, sf=1.0, alfa=1.0)
 
 start_growing_phase (input, 1)
 

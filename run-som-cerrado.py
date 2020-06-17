@@ -1,5 +1,5 @@
 import csv
-from gsom import init_gsom
+from gsom import init_grid
 from gsom import start_growing_phase
 from gsom import start_smoothing_phase
 from gsom import print_classification
@@ -32,7 +32,7 @@ with open(labels_file) as csv_file:
     for row in csv_reader:
         input_labels.append(row[0])
 
-init_gsom (input, 25, 25, sf=1.0, alfa=1.0)
+init_grid (input, 25, 25, sf=1.0, alfa=1.0)
 
 #start_growing_phase (input, 10)
 

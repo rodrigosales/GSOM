@@ -6,7 +6,7 @@ from math import exp
 from math import sqrt
 from math import log
 
-def init_gsom (input, initial_width = 2, initial_height = 2, sf = 0.3, alfa = 1.0):
+def init_grid (input, initial_width = 2, initial_height = 2, sf = 0.3, alfa = 1.0):
     
     samples_size = len(input[0])
     
