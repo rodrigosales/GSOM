@@ -32,11 +32,11 @@ with open(labels_file) as csv_file:
     for row in csv_reader:
         input_labels.append(row[0])
 
-init_gsom (input, 25, 25, 1.0)
+init_gsom (input, 25, 25, sf=1.0, alfa=1.0)
 
 #start_growing_phase (input, 10)
 
-start_smoothing_phase (input, 15)
+start_smoothing_phase (input, 1)
 
 print_classification(input)
 

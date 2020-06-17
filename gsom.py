@@ -6,7 +6,7 @@ from math import exp
 from math import sqrt
 from math import log
 
-def init_gsom (input, initial_width = 2, initial_height = 2, sf = 0.3):
+def init_gsom (input, initial_width = 2, initial_height = 2, sf = 0.3, alfa = 1.0):
     
     samples_size = len(input[0])
     
@@ -24,6 +24,9 @@ def init_gsom (input, initial_width = 2, initial_height = 2, sf = 0.3):
     
     global fd
     fd = 0.5
+    
+    global initial_learning_rate
+    initial_learning_rate = alfa
     
     total_neurons = initial_width * initial_height;
     
@@ -208,14 +211,11 @@ def neighbourhood_influence (d, iteration, epochs):
     
     sigma = (starting_neighbourhood_influence * exp(-iteration / epochs))
     
-    return (exp( -d / (2 * (pow(sigma, 2)) ))) #@todo this is the one for GSOM
+    return (exp( -d / (2 * (pow(sigma, 2)) ))) 
     
 def learning_rate(iteration, epochs):
     
-    starting_learning_date = 1.0
-    
-    return (starting_learning_date * exp(-iteration / epochs))
-    #return (1 - (3.8/len(weights)))
+    return (initial_learning_rate * exp(-iteration / epochs))
     
 def check_boundary (neuron, type = "available"):
     
