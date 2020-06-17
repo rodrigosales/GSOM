@@ -98,6 +98,10 @@ def start_growing_phase (input, epochs):
     
     return
     
+def start_som (input, epochs):
+    start_smoothing_phase (input, epochs)
+    return
+    
 def start_smoothing_phase (input, epochs):
 
     print ("-----------------------")

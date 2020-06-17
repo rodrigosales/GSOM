@@ -1,7 +1,6 @@
 import csv
 from gsom import init_grid
-from gsom import start_growing_phase
-from gsom import start_smoothing_phase
+from gsom import start_som
 from gsom import print_classification
 from gsom import plot_scatter
 from gsom import label_neurons
@@ -36,7 +35,7 @@ init_grid (input, 25, 25, sf=1.0, alfa=1.0)
 
 #start_growing_phase (input, 10)
 
-start_smoothing_phase (input, 1)
+start_som (input, 1)
 
 print_classification(input)
 
