@@ -385,10 +385,10 @@ def spread_error (neuron):
     
     return
     
-def print_classification(input):
+def print_clustering(input):
     
     print ("-----------------------")
-    print ("Classification")
+    print ("Clusters")
     print ("-----------------------")
 
     for i in range (len(input)):
@@ -409,7 +409,7 @@ def print_classification(input):
 
     return
     
-def plot_scatter (input, labels, neuron_labels, labels_colors, show_samples = False):
+def plot_map (input, labels, neuron_labels, labels_colors, show_samples = False):
 
     x = []
     y = []
@@ -454,7 +454,7 @@ def plot_scatter (input, labels, neuron_labels, labels_colors, show_samples = Fa
 
     return
     
-def label_neurons (input, input_labels):
+def get_neuron_labels (input, input_labels):
     
     neuron_labels = dict()
     frequency = dict()
@@ -491,7 +491,7 @@ def label_neurons (input, input_labels):
     
     return neuron_labels
     
-def check_gsom_accuracy (input, neuron_labels, input_labels):
+def check_neuron_accuracy (input, neuron_labels, input_labels):
     
     neuron_stats = []
     

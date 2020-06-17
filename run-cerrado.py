@@ -2,10 +2,10 @@ import csv
 from gsom import init_grid
 from gsom import start_growing_phase
 from gsom import start_smoothing_phase
-from gsom import print_classification
-from gsom import plot_scatter
-from gsom import label_neurons
-from gsom import check_gsom_accuracy
+from gsom import print_clustering
+from gsom import plot_map
+from gsom import get_neuron_labels
+from gsom import check_neuron_accuracy
 from gsom import generate_confusion_matrix
 
 data_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-data.csv"
@@ -40,11 +40,11 @@ start_growing_phase (input, 1)
 
 start_smoothing_phase (input, 1)
 
-print_classification(input)
+print_clustering(input)
 
-neuron_labels = label_neurons(input, input_labels)
+neuron_labels = get_neuron_labels(input, input_labels)
 
-check_gsom_accuracy(input, neuron_labels, input_labels)
+check_neuron_accuracy(input, neuron_labels, input_labels)
 
 generate_confusion_matrix(input, neuron_labels, input_labels)
 
@@ -60,6 +60,6 @@ labels_colors = {
     "Soy_Cotton":"#A65628"
 }
 
-plot_scatter(input, input_labels, neuron_labels, labels_colors, show_samples = False)
+plot_map(input, input_labels, neuron_labels, labels_colors, show_samples = False)
 
 
