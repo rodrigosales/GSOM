@@ -1,8 +1,8 @@
 import csv
 import GSOM
 
-data_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-data.csv"
-labels_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-labels.csv"
+data_file = "./dataset/cerrado-nofilter-data.csv"
+labels_file = "./dataset/cerrado-nofilter-labels.csv"
 
 # load the input data
 input = []
