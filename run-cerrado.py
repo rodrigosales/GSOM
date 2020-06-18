@@ -1,12 +1,5 @@
 import csv
-from gsom import init_grid
-from gsom import start_growing_phase
-from gsom import start_smoothing_phase
-from gsom import print_clustering
-from gsom import plot_map
-from gsom import get_neuron_labels
-from gsom import check_neuron_accuracy
-from gsom import generate_confusion_matrix
+import GSOM
 
 data_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-data.csv"
 labels_file = "/Users/rodrigos/Documents/INPE/GSOM-python/cerrado-nofilter-labels.csv"
@@ -34,19 +27,19 @@ with open(labels_file) as csv_file:
 
 ######################
 
-init_grid (input, sf=1.0, alfa=1.0)
+GSOM.init_grid (input, sf=1.0, alfa=1.0)
 
-start_growing_phase (input, 1)
+GSOM.start_growing_phase (input, 1)
 
-start_smoothing_phase (input, 1)
+GSOM.start_smoothing_phase (input, 1)
 
-print_clustering(input)
+GSOM.print_clustering(input)
 
-neuron_labels = get_neuron_labels(input, input_labels)
+neuron_labels = GSOM.get_neuron_labels(input, input_labels)
 
-check_neuron_accuracy(input, neuron_labels, input_labels)
+GSOM.check_neuron_accuracy(input, neuron_labels, input_labels)
 
-generate_confusion_matrix(input, neuron_labels, input_labels)
+GSOM.generate_confusion_matrix(input, neuron_labels, input_labels)
 
 labels_colors = {
     "Pasture":"#F77B01",
@@ -60,6 +53,6 @@ labels_colors = {
     "Soy_Cotton":"#A65628"
 }
 
-plot_map(input, input_labels, neuron_labels, labels_colors, show_samples = False)
+GSOM.plot_map(input, input_labels, neuron_labels, labels_colors, show_samples = False)
 
 
